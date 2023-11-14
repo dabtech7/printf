@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * print_string - Print a string.
@@ -15,14 +16,16 @@
  */
 int print_string(va_list val)
 {
+
 char *s = va_arg(val, char *);
+int len, i;
 
 if (s == NULL)
 s = "(null)";
 
-int len = _strlen(s);
+len = _strlen(s);
 
-for (int i = 0; i < len; i++)
+for (i = 0; i < len; i++)
 _putchar(s[i]);
 
 return (len);
